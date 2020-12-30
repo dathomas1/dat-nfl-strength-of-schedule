@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Get actual 2020 Strength of Schedule for all NFL Teams">
+
+    <title>All Teams - 2020 NFL Strength of Schedule</title>
+  </head>
+  <body>
+    <header>
+      <h1>All Teams - 2020 NFL Strength of Schedule</h1>
+    </header>
+    <main>
+      <p>NFL Strength of Schedule (SOS) sorted by Wining % then SOS from lowest to highest</p>
+      <table id="team-list">
+        <tr>
+          <th>Team</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>Ties</th>
+          <th>Winning %</th>
+          <th>Strength of Schedule</th>
+        </tr>
+        {% for team in teams %}
+          <tr>
+            <td>{{ team.team }}</td>
+            <td>{{ team.wins }}</td>
+            <td>{{ team.losses }}</td>
+            <td>{{ team.ties }}</td>
+            <td>{{ "{:0.3f}".format(team.winning_percentage) }}</td>
+            <td>{{ "{:0.3f}".format(team.sos) }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </main>
+  </body>
+</html>
