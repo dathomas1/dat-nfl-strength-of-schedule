@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "dat-nfl-strength-of-schedule"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Darnell Thomas <darnell.thomas@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-Flask = "^1.1.2"
+Flask = "^2.0.3"
 
 [tool.poetry.dev-dependencies]
 

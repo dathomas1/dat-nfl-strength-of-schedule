@@ -8,10 +8,10 @@ from schedule import import_league_schedule_from_csv
 # Import functions from Strength of Schedule File
 from strengthofschedule import get_all_teams, get_nfl_strength_of_schedule, get_team_wins_and_games
 
-# 2020 NFL Schedule Import
+# NFL Schedule Import
 nfl_schedule = import_league_schedule_from_csv("nflschedule.csv")
 
-# All 2020 NFL teams
+# All NFL teams
 nfl_teams = get_all_teams(nfl_schedule)
 
 """
