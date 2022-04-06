@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, jsonify
 from schedule import import_league_schedule_from_csv
 
 # Import functions from Strength of Schedule File
-from strengthofschedule import get_all_teams, get_nfl_strength_of_schedule, get_team_wins_and_games
+from strengthofschedule import get_all_teams, get_nfl_strength_of_schedule, get_team_wins_and_games, get_college_strength_of_schedule
 
 # NFL Schedule Import
 nfl_schedule = import_league_schedule_from_csv("nflschedule.csv")
@@ -57,7 +57,8 @@ def api_team_sos():
   if "team" in request.args:
     team = request.args["team"]
     nfl_sos = get_nfl_strength_of_schedule(team, nfl_schedule)
-    result = {"team": team.title(), "sos": nfl_sos}
+    college_sos = get_college_strength_of_schedule(team, nfl_schedule)
+    result = {"team": team.title(), "sos": nfl_sos, "college_method_sos": college_sos}
     return jsonify(result)
   else:
     return "Error: could not find the requested team."
