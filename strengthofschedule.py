@@ -332,7 +332,7 @@ def get_college_strength_of_schedule(team, league_schedule, played_games_only=Fa
   return (OPPONENT_RECORD_WEIGHT * opponent_win_percentage + OPPONENT_OPPONENT_RECORD_WEIGHT * opponent_opponent_win_percentage) / (OPPONENT_RECORD_WEIGHT + OPPONENT_OPPONENT_RECORD_WEIGHT)
     
 
-# TODO: pass played games only flag down and fix answer Tankathon list Jaguars SOS as .548
+# TODO: pass played games only flag down
 def get_nfl_strength_of_schedule(team, league_schedule, played_games_only=False):
   
   opponents = get_opposing_team_list(team, league_schedule, played_games_only)

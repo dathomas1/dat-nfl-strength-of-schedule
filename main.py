@@ -58,7 +58,7 @@ def api_team_sos():
     team = request.args["team"]
     nfl_sos = get_nfl_strength_of_schedule(team, nfl_schedule)
     college_sos = get_college_strength_of_schedule(team, nfl_schedule)
-    result = {"team": team.title(), "sos": nfl_sos, "college_method_sos": college_sos}
+    result = {"team": team.title(), "sos": nfl_sos, "sos_college_method": college_sos}
     return jsonify(result)
   else:
     return "Error: could not find the requested team."
